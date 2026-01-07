@@ -1,5 +1,8 @@
 *
 
 !nvim/*
+!hypr*
+*.bak.*
 !.gitignore
-
+!LICENSE
+!README.md
