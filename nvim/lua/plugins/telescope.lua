@@ -22,6 +22,8 @@ return {
               i = {
                 -- Surround the query with quotes:
                 ["<c-k>"] = lga_actions.quote_prompt(),
+                -- Require all matches to be surrounded by boundaries:
+                ["<c-o>"] = lga_actions.quote_prompt({ postfix = " -w" }),
                 -- Exclude file/directory patterns from the search:
                 ["<c-e>"] = lga_actions.quote_prompt({ postfix = " -g !" }),
                 -- Specify a global pattern where to search:
