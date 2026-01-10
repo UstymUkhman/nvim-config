@@ -11,3 +11,17 @@ map("n", "<C-a>", "$", { desc = "Go to the end of the line", remap = true })
 
 map("i", "jj", "<esc>", { desc = "Switch to normal mode", silent = true })
 map("i", "jk", "<esc>", { desc = "Switch to normal mode", silent = true })
+
+-- Keymap toggle to temporarily hide all diagnostics:
+map("n", "<leader>dh", function ()
+  local config = vim.diagnostic.config()
+
+  if config ~= nil then
+    local vt = config.virtual_text
+    vim.diagnostic.config({
+        virtual_text = not vt,
+        underline = not vt,
+        signs = not vt,
+    })
+  end
+end, { desc = "Toggle diagnostics visibility" })
