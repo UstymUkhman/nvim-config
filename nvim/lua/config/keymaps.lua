@@ -4,6 +4,8 @@
 local map = vim.keymap.set
 
 local shortcuts = require("telescope-live-grep-args.shortcuts")
+
+map("n", "<leader>bt", "<cmd>split | terminal<cr>", { desc = "Open a terminal", silent = true })
 map("n", "<leader>fs", shortcuts.grep_word_under_cursor, { desc = "Live Grep World" })
 
 map("n", "<C-i>", "^", { desc = "Go to the start of the line", remap = true })
